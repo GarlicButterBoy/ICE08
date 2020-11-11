@@ -29,20 +29,20 @@ public class Main
                 System.out.print("Please enter your age : ");
                 age = keyboard.nextFloat();
                 //Validation
-                if (age != 0.0f)
+                if (age <= 0.0f || age > 100.00f)
                 {
-                    dirtyFlag = false;
+                    System.out.print("\nYou must enter a valid float greater than 0.00 or lower than 100.00\n");
+                    keyboard.nextLine();
+                    dirtyFlag = true;
                 }
                 else
                     {
-                        System.out.print("\nYou must enter a valid float greater than 0.0\n");
-                        keyboard.nextLine();
-                        dirtyFlag = true;
+                        dirtyFlag = false;
                     }
             }
             catch (InputMismatchException inputMismatchException)
             {
-                System.out.print("\nYou must enter a valid float greater than 0.0\n");
+                System.out.print("\nYou must enter a valid float greater than 0.00 or lower than 100.00\n");
                 keyboard.nextLine();
                 dirtyFlag = true;
             }
