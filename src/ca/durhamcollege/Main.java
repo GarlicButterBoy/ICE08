@@ -48,7 +48,28 @@ public class Main
             }
         }
 
+        //2d Array Example
+        int rows = 8, columns = 8;
+        float[][] chessBoard = new float[rows][columns];
 
+        for (int x = 0; x < rows ; x++)
+        {
+            for (int y = 0; y < columns; y++) {
+                chessBoard[x][y] = (100.0f * (float)Math.random()) + 1.0f;
+
+            }
+        }
+        for (int x = 0; x < rows ; x++)
+        {
+            for (int y = 0; y < columns; y++)
+            {
+                var randRows = (int) (Math.random() * rows) + 1.0f;
+                var randColumns = (int) (Math.random() * columns) + 1.0f;
+
+                System.out.print("\nFor Row: " + (x + 1) + " For Columns: " + (y + 1) + " ");
+                System.out.printf("\nThe random number is: %.2f", chessBoard[x][y]);
+            }
+        }
         //Output
         System.out.println();
         System.out.printf("You entered: %s\n", name);
